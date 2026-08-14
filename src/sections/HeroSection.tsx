@@ -64,7 +64,10 @@ export default function HeroSection() {
 
       {/* Positioning lives on this wrapper: FadeIn writes an inline transform,
           which would otherwise clobber the Tailwind -translate-x-1/2 centering. */}
-      <div className="absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:w-[360px] sm:translate-y-0 md:w-[440px] lg:w-[520px]">
+      {/* Centred with flex rather than left-1/2 + translate: an absolutely
+          positioned shrink-to-fit box offset by left:50% is capped at the
+          remaining 50% of the width, which squashed the portrait. */}
+      <div className="absolute inset-x-0 top-1/2 z-10 flex -translate-y-1/2 justify-center sm:bottom-0 sm:top-auto sm:translate-y-0">
         <FadeIn delay={0.6} y={30}>
           <Magnet
             padding={150}
@@ -75,7 +78,9 @@ export default function HeroSection() {
             <img
               src="./portrait.png"
               alt={PROFILE.fullName}
-              className="w-full select-none object-contain"
+              // Height-driven, width auto: the portrait keeps its footprint on
+              // the page whatever aspect ratio the source render happens to be.
+              className="h-[320px] w-auto select-none object-contain sm:h-[480px] md:h-[585px] lg:h-[690px]"
               draggable={false}
               // Falls back to the dashed placeholder until public/portrait.png exists.
               onError={(e) => {

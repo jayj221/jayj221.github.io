@@ -2,7 +2,11 @@
 // the same engine behind "Remove Background" in Preview and Photos.
 //
 //   swiftc -O tools/cutout.swift -o tools/cutout
-//   ./tools/cutout <input-image> <output.png>
+//   ./tools/cutout <input-image> <output.png> [--no-crop]
+//
+// By default the result is cropped tight to the subject, so a source image with
+// wide empty margins still fills a fixed-width slot on the page. Pass --no-crop
+// to keep the original framing.
 
 import AppKit
 import CoreImage
@@ -14,9 +18,12 @@ func fail(_ message: String) -> Never {
     exit(1)
 }
 
-let args = CommandLine.arguments
+var args = CommandLine.arguments
+let cropToSubject = !args.contains("--no-crop")
+args.removeAll { $0 == "--no-crop" }
+
 guard args.count == 3 else {
-    fail("usage: cutout <input-image> <output.png>")
+    fail("usage: cutout <input-image> <output.png> [--no-crop]")
 }
 
 let inputURL = URL(fileURLWithPath: args[1])
@@ -49,7 +56,7 @@ do {
     masked = try observation.generateMaskedImage(
         ofInstances: instances,
         from: handler,
-        croppedToInstancesExtent: false
+        croppedToInstancesExtent: cropToSubject
     )
 } catch {
     fail("could not generate masked image: \(error.localizedDescription)")
