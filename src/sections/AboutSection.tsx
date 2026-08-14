@@ -3,32 +3,34 @@ import ContactButton from '../components/ContactButton';
 import FadeIn from '../components/FadeIn';
 import { PROFILE } from '../data/content';
 
-const BASE = 'https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7';
+// Vendored locally rather than hotlinked from the third-party host they
+// originally came from, so the section can't break when that host changes.
+const BASE = './decor';
 
 const DECOR = [
   {
-    src: `${BASE}/moon_icon.11395d36.png`,
+    src: `${BASE}/moon.png`,
     className:
       'absolute top-[4%] left-[1%] w-[120px] sm:left-[2%] sm:w-[160px] md:left-[4%] md:w-[210px]',
     delay: 0.1,
     x: -80,
   },
   {
-    src: `${BASE}/p59_1.4659672e.png`,
+    src: `${BASE}/object.png`,
     className:
       'absolute bottom-[8%] left-[3%] w-[100px] sm:left-[6%] sm:w-[140px] md:left-[10%] md:w-[180px]',
     delay: 0.25,
     x: -80,
   },
   {
-    src: `${BASE}/lego_icon-1.703bb594.png`,
+    src: `${BASE}/lego.png`,
     className:
       'absolute top-[4%] right-[1%] w-[120px] sm:right-[2%] sm:w-[160px] md:right-[4%] md:w-[210px]',
     delay: 0.15,
     x: 80,
   },
   {
-    src: `${BASE}/Group_134-1.2e04f3ce.png`,
+    src: `${BASE}/group.png`,
     className:
       'absolute bottom-[8%] right-[3%] w-[130px] sm:right-[6%] sm:w-[170px] md:right-[10%] md:w-[220px]',
     delay: 0.3,

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github, Mail } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import ContactButton from '../components/ContactButton';
 import FadeIn from '../components/FadeIn';
 import { ARCHIVE, PROFILE } from '../data/content';
@@ -57,28 +57,44 @@ export default function ArchiveSection() {
           className="font-light uppercase leading-snug tracking-wide text-[#D7E2EA]/70"
           style={{ fontSize: 'clamp(0.9rem, 1.6vw, 1.25rem)' }}
         >
-          Some of the work — trading systems, market-data pipelines — is
-          private. Happy to walk through it.
+          Some of the work — trading systems, valuation models, market-data
+          pipelines — is private or under NDA. Happy to walk through it.
         </p>
 
         <ContactButton href={`mailto:${PROFILE.email}`} label="Contact Me" />
 
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
-          <a
-            href={PROFILE.github}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-sm font-light uppercase tracking-wider text-[#D7E2EA]/60 transition-opacity duration-200 hover:opacity-100 hover:text-[#D7E2EA]"
-          >
-            <Github size={16} />
-            github.com/jayj221
-          </a>
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
           <a
             href={`mailto:${PROFILE.email}`}
             className="flex items-center gap-2 text-sm font-light uppercase tracking-wider text-[#D7E2EA]/60 transition-colors duration-200 hover:text-[#D7E2EA]"
           >
             <Mail size={16} />
             {PROFILE.email}
+          </a>
+          <a
+            href={PROFILE.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm font-light uppercase tracking-wider text-[#D7E2EA]/60 transition-colors duration-200 hover:text-[#D7E2EA]"
+          >
+            <Linkedin size={16} />
+            /in/jayantxjoshi
+          </a>
+          <a
+            href={PROFILE.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-sm font-light uppercase tracking-wider text-[#D7E2EA]/60 transition-colors duration-200 hover:text-[#D7E2EA]"
+          >
+            <Github size={16} />
+            github.com/jayj221
+          </a>
+          <a
+            href={`tel:${PROFILE.phone.replace(/\s/g, '')}`}
+            className="flex items-center gap-2 text-sm font-light uppercase tracking-wider text-[#D7E2EA]/60 transition-colors duration-200 hover:text-[#D7E2EA]"
+          >
+            <Phone size={16} />
+            {PROFILE.phone}
           </a>
         </div>
 

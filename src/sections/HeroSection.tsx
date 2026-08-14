@@ -5,8 +5,9 @@ import { PROFILE } from '../data/content';
 
 const NAV = [
   { label: 'About', href: '#about' },
-  { label: 'Expertise', href: '#expertise' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Awards', href: '#awards' },
   { label: 'Contact', href: '#contact' },
 ];
 
