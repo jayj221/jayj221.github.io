@@ -38,7 +38,9 @@ export default function HeroSection() {
           as="h1"
           delay={0.15}
           y={40}
-          className="hero-heading mt-6 w-full whitespace-nowrap text-center text-[14vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:text-[15vw] md:-mt-5 md:text-[16vw] lg:text-[17.5vw]"
+          // Sized so "Hi, i'm jayant" spans the viewport without clipping; the
+          // spec's 14–17.5vw was tuned for a name two characters shorter.
+          className="hero-heading mt-6 w-full whitespace-nowrap text-center text-[15vw] font-black uppercase leading-none tracking-tight sm:mt-4 sm:text-[15.25vw] md:-mt-5 md:text-[15.4vw] lg:text-[15.5vw]"
         >
           Hi, i&apos;m {PROFILE.firstName}
         </FadeIn>
