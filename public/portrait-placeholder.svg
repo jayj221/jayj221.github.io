@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 700" width="520" height="700">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#646973" />
+      <stop offset="100%" stop-color="#BBCCD7" />
+    </linearGradient>
+  </defs>
+  <rect width="520" height="700" rx="40" fill="#141414" stroke="#D7E2EA" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="12 10" />
+  <g fill="url(#g)" opacity="0.75">
+    <circle cx="260" cy="290" r="105" />
+    <path d="M110 620c0-96 67-165 150-165s150 69 150 165z" />
+  </g>
+  <text x="260" y="672" text-anchor="middle" fill="#D7E2EA" fill-opacity="0.5"
+        font-family="Kanit, sans-serif" font-size="21" letter-spacing="2">
+    ADD public/portrait.png
+  </text>
+</svg>
