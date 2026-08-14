@@ -10,16 +10,23 @@ npm run build    # → dist/
 
 ## Add your portrait
 
-The hero expects **`public/portrait.png`**. Until that file exists the hero shows a
+The hero expects **`public/portrait.png`**. Until that file exists it shows a
 dashed placeholder instead.
 
-The reference design overlaps the portrait with the headline type, so a
-**background-removed cutout with transparency** looks right. A rectangular photo
-with its original backdrop will read as a floating box sitting on the letters.
+The design overlaps the portrait with the headline type, so it needs a
+**transparent cutout** — a photo with its original backdrop reads as a floating
+box sitting on the letters. `tools/make-portrait.sh` handles that:
 
 ```bash
-cp /path/to/your-photo.png public/portrait.png
+./tools/make-portrait.sh ~/Downloads/my-photo.png
 ```
+
+Run it with no argument and it picks the newest image in `~/Downloads` or `~/Desktop`.
+
+Background removal uses the macOS Vision subject-lifting model
+(`tools/cutout.swift`) — the same engine as **Remove Background** in Preview and
+Photos. Runs locally: no network, no Python, no model download. Needs macOS 14+
+and the Xcode command line tools.
 
 ## Sections
 
