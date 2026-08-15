@@ -203,7 +203,7 @@ export const PROJECTS: Project[] = [
     summary:
       'The platform where culture moves first. A social network built on the premise that scrolling isn’t the problem — chaos is. Every trend is an asset with an owner: the person who spots it first earns the most as it climbs, and holding the crown means defending it. An Algorithm Score replaces the black box with a number you can actually see and move, and the feed is opt-in across 60+ topics rather than inferred from what kept you angry longest.',
     stack: 'Interactive prototype · Reels-native UX · Scroll-snap',
-    href: 'https://jayj221.github.io',
+    href: 'https://jayj221.github.io/pulse/',
     linkLabel: 'Live Prototype',
     images: [`${W}/pulse-intro.png`, `${W}/pulse-score.png`, `${W}/pulse-trends.png`],
     fit: 'contain',
