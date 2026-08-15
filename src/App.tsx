@@ -7,6 +7,7 @@ import MarqueeSection from './sections/MarqueeSection';
 import MetricsSection from './sections/MetricsSection';
 import ProjectsSection from './sections/ProjectsSection';
 import ServicesSection from './sections/ServicesSection';
+import VolunteeringSection from './sections/VolunteeringSection';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <ExperienceSection />
       <ProjectsSection />
       <AwardsSection />
+      <VolunteeringSection />
       <ArchiveSection />
     </main>
   );

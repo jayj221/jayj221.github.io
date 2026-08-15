@@ -5,11 +5,12 @@ export const PROFILE = {
   phone: '+91 98183 00229',
   github: 'https://github.com/jayj221',
   linkedin: 'https://www.linkedin.com/in/jayantxjoshi',
-  role: 'Finance Professional & Entrepreneur',
+  location: 'Delhi, India',
+  role: 'Building Nomo · Technology and Finance',
   tagline:
-    'financial models that hold up under pressure, and products that don’t need a second pitch',
+    'building nomo. technology and finance, and products that don’t need a second pitch',
   about:
-    'Finance professional and entrepreneur. I started investing in crypto and US equities at 16, built a water desalination prototype at 15 that an NGO bought, and topped the University of Delhi in five subjects. Now I model billion-rupee deals by day and ship the products by night. Let’s build something incredible together!',
+    'Founder of Nomo, an AI-first dating app. I started investing in crypto and US equities at 16, built a water desalination prototype at 15 that an NGO bought, and topped the University of Delhi in five subjects. Four years across valuation desks, banking floors and strategy rooms — now building full time. Let’s build something incredible together!',
 };
 
 /* ---------------------------------------------------------------- snapshot */
@@ -40,126 +41,265 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     number: '01',
+    name: 'Product & Founding',
+    description:
+      'Nomo, end to end: an AI-first connection app that works out your bracket, gives everyone ten matches a day, and opens a live voice window before anyone sees a photo. Next.js and Supabase, row-level security, realtime, WebRTC voice, moderation pipelines and web push.',
+  },
+  {
+    number: '02',
     name: 'Valuation & Deal Modelling',
     description:
       'Integrated valuation models built on WACC DCF, LBO, Precedent Transactions, GPC, PORI and GTM. PD modelling and ECL computation across multi-currency portfolios. Live deal support for billion-rupee transactions, not academic exercises.',
   },
   {
-    number: '02',
+    number: '03',
     name: 'Wealth & Portfolio Strategy',
     description:
       '₹440M managed across HNI portfolios at a 17% IRR and 4% alpha. Allocation across public equities, structured products and MLDs, with downside risk and leveraged payoff scenarios modelled before anything gets committed.',
   },
   {
-    number: '03',
+    number: '04',
     name: 'Strategy & Consulting',
     description:
       'Twelve Ministry of Education schemes — SAMAGRA Shiksha, TEQUIP, NIPUN Bharat — integrated into the NIOS framework for the Government of India, with an implementation roadmap and ₹200M of projected cost optimisation via zero-based budgeting.',
   },
   {
-    number: '04',
-    name: 'Product & Engineering',
-    description:
-      'Full-stack products taken end to end: Next.js and Supabase, row-level security, realtime, WebRTC voice rooms, moderation pipelines and web push. Plus developer tooling that reads git diffs and identity infrastructure for AI agents.',
-  },
-  {
     number: '05',
-    name: 'Quant & AI Systems',
+    name: 'AI, Data & Quant Systems',
     description:
-      'Multi-factor equity screeners and autonomous paper traders in Python — Minervini trend templates, CAN SLIM, VCP breakouts, PTJ risk rules. Generative-AI tooling and market-data pipelines that run on schedule without supervision.',
+      'AI and information analytics at GSPANN. Multi-factor equity screeners and autonomous paper traders in Python — Minervini trend templates, CAN SLIM, VCP breakouts, PTJ risk rules — plus developer tooling that reads git diffs and identity infrastructure for AI agents.',
   },
 ];
 
 /* -------------------------------------------------------------- experience */
 
 export type Role = {
-  number: string;
   company: string;
   title: string;
   period: string;
-  tag: string;
-  points: string[];
-  stats: { value: string; label: string }[];
+  location?: string;
+  tag?: string;
+  points?: string[];
+  stats?: { value: string; label: string }[];
+  subRoles?: { title: string; period: string }[];
 };
 
-export const EXPERIENCE: Role[] = [
+export type ExperienceGroup = {
+  key: string;
+  label: string;
+  blurb: string;
+  roles: Role[];
+};
+
+export const EXPERIENCE: ExperienceGroup[] = [
   {
-    number: '01',
-    company: 'D&P Advisory Ltd.',
-    title: 'Valuation Analyst',
-    period: 'Jun 2025 — Present',
-    tag: 'Valuation · FS',
-    points: [
-      'Built integrated valuation models using Precedent Transactions, PORI, GPC, GTM and WACC DCF across the Financial Services sector.',
-      'Conducted peer benchmarking via S&P Capital IQ, normalising capital structures and improving pricing accuracy by 25%.',
-      'Led PD modelling and ECL computation across multi-currency portfolios, translating credit risk into actionable investment insight.',
-    ],
-    stats: [
-      { value: '+25%', label: 'Pricing accuracy' },
-      { value: 'Multi-CCY', label: 'Portfolio coverage' },
+    key: 'building',
+    label: 'Building',
+    blurb: 'Things I started and own.',
+    roles: [
+      {
+        company: 'Nomo',
+        title: 'Founder',
+        period: 'Jun 2026 — Present',
+        location: 'Delhi, India · Full-time',
+        tag: 'Current',
+        points: [
+          'One of the only AI-first dating apps: it works out what bracket you are in, then only shows you people on that level, with interests layered on top.',
+          'Ten matches a day for everyone — capped deliberately, because the distribution is the broken part, not the applicants.',
+          'Built end to end on Next.js and Supabase: row-level security, realtime, private storage, Daily.co voice rooms, moderation and web push.',
+        ],
+        stats: [
+          { value: '10/day', label: 'Matches, capped' },
+          { value: 'Live soon', label: 'App in progress' },
+        ],
+      },
+      {
+        company: 'Stealth FinTech Startup',
+        title: 'Co-Founder',
+        period: 'Sep 2025 — Apr 2026',
+        location: 'Bengaluru, India · Part-time',
+        points: [
+          'Conceptualised and built an AI-powered micro-investing platform that rounds up digital transactions and invests spare change into diversified portfolios.',
+          'Defined an investment engine supporting mutual funds, ETFs and goal-based savings with AI-driven portfolio recommendations.',
+          'Evaluated payment infrastructure, KYC providers, mutual fund APIs and compliance requirements to determine technical feasibility.',
+          'Engaged investors including Blume Ventures, Orios Venture Partners and angels on a potential ₹45M pre-seed round.',
+        ],
+        stats: [
+          { value: '₹45M', label: 'Pre-seed discussed' },
+          { value: '8 mos', label: 'Concept to feasibility' },
+        ],
+      },
     ],
   },
   {
-    number: '02',
-    company: 'HDFC Bank Ltd.',
-    title: 'Wealth & Investment Banking Intern',
-    period: 'Jun 2024 — Aug 2024',
-    tag: 'M&A · IB',
-    points: [
-      'Built LBO and DCF models for 2 buy-side transactions totalling ₹1.018 billion, evaluating acquisition returns and downside risk.',
-      'Produced Investment Memoranda combining financial analysis, market mapping and competitive positioning across 2 sectors.',
-      'Modelled debt waterfall, equity returns and exit scenarios under bear, base and bull assumptions to stress-test the deal thesis.',
-    ],
-    stats: [
-      { value: '₹1.018B', label: 'Deal value modelled' },
-      { value: '2 IMs', label: 'Across sectors' },
-    ],
-  },
-  {
-    number: '03',
-    company: 'Anand Rathi Wealth',
-    title: 'Wealth Management Intern',
-    period: 'Apr 2024 — Jun 2024',
-    tag: 'Wealth · HNI',
-    points: [
-      'Managed ₹440M across 2 HNI portfolios, driving a 17% IRR and 4% alpha through active allocation and risk calibration.',
-      'Designed strategies across public equities, structured products and MLDs; modelled downside risk and leveraged payoffs.',
-      'Evaluated index-linked instruments under varying volatility assumptions to optimise risk-adjusted outcomes.',
-    ],
-    stats: [
-      { value: '₹440M', label: 'AUM managed' },
-      { value: '+4%', label: 'Alpha generated' },
+    key: 'technology',
+    label: 'Technology',
+    blurb: 'Where the engineering pays rent.',
+    roles: [
+      {
+        company: 'GSPANN Technologies, Inc',
+        title: 'AI and Information Analytics',
+        period: 'May 2026 — Present',
+        location: 'On-site · Internship',
+        tag: 'Current',
+        points: [
+          'AI and information analytics engagements — applying data and model tooling to production analytics problems.',
+        ],
+      },
     ],
   },
   {
-    number: '04',
-    company: 'Ernst & Young',
-    title: 'Strategy Consulting Intern',
-    period: 'Feb 2024 — Apr 2024',
-    tag: 'Strategy · Gov',
-    points: [
-      'Integrated 12 Ministry of Education schemes including SAMAGRA Shiksha, TEQUIP and NIPUN Bharat within the NIOS framework.',
-      'Developed an implementation roadmap with execution timelines via cross-functional stakeholder alignment for the Government of India.',
-      'Projected ₹200M of cost optimisation through resource reallocation and zero-based budgeting across MoE portfolios.',
-    ],
-    stats: [
-      { value: '₹200M', label: 'Cost optimisation' },
-      { value: '12', label: 'MoE schemes' },
+    key: 'finance',
+    label: 'Finance & Consulting',
+    blurb: 'Valuation desks, banking floors, strategy rooms.',
+    roles: [
+      {
+        company: 'D&P Advisory',
+        title: 'Valuation Analyst',
+        period: 'Jun 2025 — May 2026',
+        location: 'Bengaluru, India · Full-time',
+        tag: 'Valuation · FS',
+        points: [
+          'Built integrated valuation models using Precedent Transactions, PORI, GPC, GTM and WACC DCF across the Financial Services sector.',
+          'Conducted peer benchmarking via S&P Capital IQ, normalising capital structures and improving pricing accuracy by 25%.',
+          'Led PD modelling and ECL computation across multi-currency portfolios, translating credit risk into actionable investment insight.',
+        ],
+        stats: [
+          { value: '+25%', label: 'Pricing accuracy' },
+          { value: 'Multi-CCY', label: 'Portfolio coverage' },
+        ],
+      },
+      {
+        company: 'Anand Rathi Wealth Limited',
+        title: 'Wealth Management Intern',
+        period: 'Jun 2024 — Aug 2024',
+        location: 'Delhi, India · Full-time',
+        tag: 'Wealth · HNI',
+        points: [
+          'Managed ₹440M across 2 HNI portfolios, driving a 17% IRR and 4% alpha through active allocation and risk calibration.',
+          'Designed strategies across public equities, structured products and MLDs; modelled downside risk and leveraged payoffs.',
+          'Evaluated index-linked instruments under varying volatility assumptions to optimise risk-adjusted outcomes.',
+        ],
+        stats: [
+          { value: '₹440M', label: 'AUM managed' },
+          { value: '+4%', label: 'Alpha generated' },
+        ],
+      },
+      {
+        company: 'HDFC Bank Limited',
+        title: 'Investment Banking Intern',
+        period: 'Apr 2024 — Jun 2024',
+        location: 'Delhi, India · Hybrid',
+        tag: 'M&A · IB',
+        points: [
+          'Built LBO and DCF models for 2 buy-side transactions totalling ₹1.018 billion, evaluating acquisition returns and downside risk.',
+          'Produced Investment Memoranda combining financial analysis, market mapping and competitive positioning across 2 sectors.',
+          'Modelled debt waterfall, equity returns and exit scenarios under bear, base and bull assumptions to stress-test the deal thesis.',
+        ],
+        stats: [
+          { value: '₹1.018B', label: 'Deal value modelled' },
+          { value: '2 IMs', label: 'Across sectors' },
+        ],
+      },
+      {
+        company: 'EY',
+        title: 'Strategy Consulting Intern',
+        period: 'Feb 2024 — Apr 2024',
+        location: 'Aerocity · On-site',
+        tag: 'Strategy · Gov',
+        points: [
+          'Integrated 12 Ministry of Education schemes including SAMAGRA Shiksha, TEQUIP and NIPUN Bharat within the NIOS framework.',
+          'Developed an implementation roadmap with execution timelines via cross-functional stakeholder alignment for the Government of India.',
+          'Projected ₹200M of cost optimisation through resource reallocation and zero-based budgeting across MoE portfolios.',
+        ],
+        stats: [
+          { value: '₹200M', label: 'Cost optimisation' },
+          { value: '12', label: 'MoE schemes' },
+        ],
+      },
+      {
+        company: 'Faad Network Pvt. Ltd',
+        title: 'Venture Capital Intern',
+        period: 'Jan 2023 — Jun 2023',
+        location: 'Gurugram, Haryana, India',
+        tag: 'VC · Web3',
+        points: [
+          'Early-stage venture diligence with a focus on blockchain and cryptocurrency ventures.',
+        ],
+      },
     ],
   },
   {
-    number: '05',
-    company: 'Paasa (YC S24)',
-    title: 'Founder’s Office — Offer Extended',
-    period: 'Mar 2026',
-    tag: 'YC-Backed',
-    points: [
-      'Interviewed for Customer Success at a Y Combinator S24 startup, then shortlisted for a Founder’s Office role after final-round discussions.',
-      'Signals alignment with high-velocity early-stage environments and founder-level problem ownership.',
+    key: 'leadership',
+    label: 'Leadership & Community',
+    blurb: 'Societies, social ventures, and the people side.',
+    roles: [
+      {
+        company: 'Enactus SSCBS',
+        title: 'Advisory Committee → Director of PR → Organising Committee',
+        period: 'Jan 2023 — May 2025 · 2 yrs 5 mos',
+        location: 'Delhi, India · Full-time',
+        subRoles: [
+          { title: 'Advisory Committee Member', period: 'Aug 2024 — May 2025' },
+          { title: 'Director of Public Relations', period: 'Jun 2023 — Aug 2024' },
+          { title: 'Organising Committee', period: 'Jan 2023 — Jun 2023' },
+        ],
+        points: [
+          'Represented Enactus SSCBS with Project Pravaah, taking 2nd place at XLRI’s IgniteX B-Plan competition.',
+          'Enactus SSCBS was named National Runner Up at the Enactus India National Exposition 2025 — top 4 of 120+ colleges in the Early Stage category.',
+        ],
+      },
+      {
+        company: 'Project Kaagazi',
+        title: 'Co-founder & Director of Research and Expansion',
+        period: 'Jul 2023 — Aug 2024',
+        location: 'Delhi, India · Full-time',
+        points: ['Community-service venture: research, expansion and on-ground delivery.'],
+      },
+      {
+        company: 'Project Basera',
+        title: 'Associate Consultant',
+        period: 'Jan 2023 — Jul 2023',
+        location: 'Delhi, India · Full-time',
+      },
+      {
+        company: 'FinX — The Finance Society of SSCBS',
+        title: 'Organising Committee',
+        period: 'Jan 2023 — Jun 2023',
+        location: 'On-site · Full-time',
+      },
     ],
-    stats: [
-      { value: 'YC S24', label: 'Y Combinator' },
-      { value: 'Founder’s Office', label: 'Offer extended' },
+  },
+];
+
+/* ------------------------------------------------------------ volunteering */
+
+export type Volunteering = {
+  org: string;
+  role: string;
+  period: string;
+  cause: string;
+  points: string[];
+};
+
+export const VOLUNTEERING: Volunteering[] = [
+  {
+    org: 'Lakshya Foundation',
+    role: 'Education Volunteer',
+    period: 'Nov 2022 — Oct 2023 · 1 yr',
+    cause: 'Education',
+    points: [
+      'Delivered computational-skills and plastic-awareness education to underprivileged children at a Delhi-based non-profit, through quizzes, skits and hands-on demonstrations.',
+      'Ran student competitions and funded the prizes and materials through fundraisers.',
+    ],
+  },
+  {
+    org: 'Shubhakshika Educational Society',
+    role: 'Education Volunteer',
+    period: 'Apr 2023 — Jun 2024 · 1 yr 3 mos',
+    cause: 'Children',
+    points: [
+      'Taught and ran interactive sessions for children, including skits and creative programming built for the students.',
     ],
   },
 ];
@@ -178,7 +318,11 @@ export type Project = {
   /** Phone captures need containing; wide desktop captures crop fine. */
   fit?: 'cover' | 'contain';
   /** Shown instead of images when a project has no screenshottable UI. */
-  panel?: { kind: 'terminal' | 'stats'; lines?: string[]; stats?: { value: string; label: string }[] };
+  panel?: {
+    kind: 'terminal' | 'stats';
+    lines?: string[];
+    stats?: { value: string; label: string }[];
+  };
 };
 
 const W = './work';
@@ -187,12 +331,12 @@ export const PROJECTS: Project[] = [
   {
     number: '01',
     name: 'Nomo',
-    category: 'Full-Stack Product',
+    category: 'Founder · Building Now',
     summary:
-      'No more fake connections. A voice-first, anonymous-first connection app. You write three prompts, people in your bracket read them, and if you both like each other a live voice call opens at the next window — a 15-minute period that fires for everyone at once. Identity reveals step by step, only when both people choose it. Built end to end: Postgres with row-level security, realtime, private storage, Daily.co voice-only WebRTC rooms, server-side photo scoring, moderation on every prompt answer, web push, and a client-side WASM liveness check.',
+      'One of the only AI-first dating apps. It works out what level you are on, then only shows you people in that bracket — interests and hobbies layer on top. Ten matches a day, the same for everyone, because the distribution is what is broken: a small group gets more matches than they can read while most get almost none. Nomo caps it. No photos until you talk; a live voice window opens for everyone at once, and identity reveals only when both people choose it.',
     stack: 'Next.js 14 · Supabase · Daily.co · Replicate · MediaPipe',
-    href: 'https://github.com/jayj221/nomo',
-    linkLabel: 'View Source',
+    href: 'https://nomosingle.com',
+    linkLabel: 'Live Site',
     images: [`${W}/nomo-prompts.png`, `${W}/nomo-ten.png`, `${W}/nomo-call.png`],
     fit: 'contain',
   },
@@ -256,25 +400,6 @@ export const PROJECTS: Project[] = [
       ],
     },
   },
-  {
-    number: '06',
-    name: 'Fintech Application',
-    category: 'Startup · In Progress',
-    summary:
-      'A fintech product currently in talks to raise ₹45 million. Combining deep finance domain knowledge with a builder’s instinct to close a real gap in the Indian financial ecosystem — the part where the modelling rigour of an institutional desk never reaches the people who need it most. Building quietly until it’s worth showing.',
-    stack: 'Fintech · India · Pre-seed',
-    linkLabel: 'In Talks',
-    images: [],
-    panel: {
-      kind: 'stats',
-      stats: [
-        { value: '₹45M', label: 'Raise in discussion' },
-        { value: 'Pre-seed', label: 'Current stage' },
-        { value: 'India', label: 'Target market' },
-        { value: '2026', label: 'Building since' },
-      ],
-    },
-  },
 ];
 
 /* ------------------------------------------------------------------ awards */
@@ -303,7 +428,15 @@ export const AWARDS: Award[] = [
     rank: '#2',
     title: 'IgniteX — B-Plan Competition',
     org: 'XLRI Jamshedpur',
-    detail: 'National Rank 2 among 1,000+ participants',
+    detail:
+      'National Rank 2 among 1,000+ participants, representing Enactus SSCBS with Project Pravaah',
+  },
+  {
+    rank: '#2',
+    title: 'Enactus India National Exposition 2025',
+    org: 'Enactus India',
+    detail:
+      'National Runner Up with Enactus SSCBS — top 4 of 120+ colleges, Early Stage category',
   },
   {
     rank: '#1',
@@ -357,21 +490,21 @@ export const EDUCATION: Credential[] = [
     title: 'BBA — Financial Investment Analysis',
     org: 'Shaheed Sukhdev College of Business Studies, University of Delhi',
     detail:
-      'University of Delhi topper in 5 subjects. Director of Public Relations at Enactus SSCBS, Co-Founder and Head of Department at Project Kaagazi, committee member at FinX.',
+      'University of Delhi topper in 5 subjects. Director of Public Relations at Enactus SSCBS, Co-Founder and Director of Research and Expansion at Project Kaagazi, organising committee at FinX.',
     meta: '2022–2025 · CGPA 8.1/10',
   },
   {
-    title: 'CFA Level-1 Candidate',
-    org: 'CFA Institute',
+    title: 'Commerce with Mathematics and Economics',
+    org: 'Amity International School, Noida',
     detail:
-      'Investment analysis, portfolio management and financial reporting toward the charter.',
-    meta: '2025',
+      'Where the maths and economics groundwork started, alongside classical flute and Scottish pipe band scholar awards.',
   },
   {
     title: 'Fundamentals of Quantitative Marketing',
-    org: 'The Wharton School, University of Pennsylvania',
+    org: 'Wharton Online — University of Pennsylvania',
     detail:
       'Quantitative frameworks for marketing analysis, customer lifetime value and data-driven decisions.',
+    meta: 'Issued Aug 2024',
   },
   {
     title: 'Statistics and Python',
